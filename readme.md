@@ -61,6 +61,27 @@ Alla inputs ska ligga i ett `<form>`-element:
 </form>
 ```
 
+### Tabeller
+Tabeller används för att visa data i rader och kolumner. De består av `<table>`, `<tr>` (table row), `<th>` (table header) och `<td>` (table data).
+
+```html
+<table>
+  <tr>
+    <th>Produkt</th>
+    <th>Pris</th>
+  </tr>
+  <tr>
+    <td>Skor</td>
+    <td>500 kr</td>
+  </tr>
+  <tr>
+    <td>Jacka</td>
+    <td>1200 kr</td>
+  </tr>
+</table>
+```
+
+Tabeller kan också innehålla `<thead>`, `<tbody>` och `<tfoot>` för att strukturera data ytterligare, men det är inte obligatoriskt.
 
 ### Ikoner (FontAwesome)
 1. Klistra in din Kit-länk (från FontAwesome) i HTML-dokumentets `<head>`.
@@ -87,11 +108,47 @@ Alla inputs ska ligga i ett `<form>`-element:
 2. Klistra in `@import url('https://fonts.googleapis.com/css2?...');` i CSS-filen.
 3. CSS: `font-family: 'Roboto', sans-serif;`.
 
+### Tabeller
+Tabeller kan stylas med CSS, tex:
+```css
+table {
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+```
+
+### Listor
+Listor kan också stylas, t.ex.:
+```css
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+li {
+  margin-bottom: 5px;
+}
+```
+
+
 ### Bakgrund & Gradients
-* **Bakgrundsfärg:** `background-color: lightblue;`.
-* **Bakgrundsbild:** `background-image: url('bild.jpg'); background-size: cover;`.
-* **Gradients:** `background: linear-gradient(to right, red, orange);`.
-    * *Verktyg:* [cssgradient.io](https://cssgradient.io) för att generera snygga övergångar.
+**Bakgrundsfärg** 
+```css 
+background-color: lightblue;
+```
+**Bakgrundsbild** 
+```css
+background-image: url('bild.jpg');
+background-size: cover;
+```
+**Gradients** 
+```css
+background: linear-gradient(to right, red, orange);
+```
+*Verktyg:* [cssgradient.io](https://cssgradient.io) för att generera snygga övergångar.
 
 ### Box-modellen
 Box-modellen består av: 
@@ -105,11 +162,30 @@ Box-modellen består av:
 Värden kan anges individuellt eller i shorthand-form.
 
 **Detaljerat:**
-  `padding-top: 10px; padding-right: 20px; padding-bottom: 10px; padding-left: 20px;`
+```css
+  padding-top: 10px; 
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+```
 
-**Shorthand:** (Tänk klockan: Topp, Höger, Botten, Vänster)
-  `padding: 10px 20px 15px 5px;`
+**Shorthand:** 
 
+Sätt flera värden på en rad. (Tänk klockan: Topp, Höger, Botten, Vänster)
+```css
+  padding: 10px 20px 15px 5px;
+```
+
+```css
+  padding: 10px 20px;
+  /*** 10px = Topp & Botten
+    20px = Höger & Vänster **/
+```
+
+```css
+  padding: 10px;
+  /*** 10px = alla sidor **/
+```
 **Centrering:** `margin: auto;` (Centrerar ett block-element horisontellt (i sin förälder) om det har en fast `width`).
 
 **margin-left: auto;**
@@ -207,12 +283,30 @@ Keyframes kan också anges med % för att skapa mer komplexa animationer:
 ```
 #### Loopande animationer
 
-Keyframes kan också användas för att skapa loopande animationer (t.ex. `animation: bounce 2s infinite;`).
+Keyframes kan också användas för att skapa loopande animationer t.ex.
+```css
+animation: bounce 2s infinite;
+```
 
 ## Kodstruktur
 ### Shorthand-notation (Kompaktare CSS)
 Många egenskaper kan skrivas på en rad för att spara plats:
-* **Background:** `background: #fff url('img.jpg') no-repeat center;`
-* **Font:** `font: italic bold 16px/1.5 'Roboto', sans-serif;`
-* **Border:** `border: 2px solid red;`
+
+**Background**
+```css
+background: #fff url('img.jpg') no-repeat center;
+/* Färg, bild, upprepning och position i en rad * /
+```
+
+**Font**
+```css
+font: italic bold 16px/1.5 'Roboto', sans-serif;
+/* Stil, vikt, storlek/linjehöjd och familj i en rad * /
+```
+
+**Border**
+```css
+border: 2px solid red;
+/* Tjocklek, stil och färg i en rad * /
+```
 
