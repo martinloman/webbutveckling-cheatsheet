@@ -5,17 +5,19 @@ Detta dokument täcker grunderna i HTML5 och CSS3 för dig som bygger din först
 
 
 
-## HTML5 – Struktur & Innehåll
+## HTML5 – struktur & innehåll
 
-### Grundläggande Taggar
+### Grundläggande taggar
 * `<h1>` till `<h6>`: Rubriker. Använd endast en `<h1>` per sida (sidans huvudtitel).
 * `<p>`: Paragraf för vanlig brödtext.
 * `<a href="url">Länktext</a>`: Skapar en klickbar länk.
 * `<ul>` & `<li>`: Punktlista (Unordered List).
 * `<ol>` & `<li>`: Numrerad lista (Ordered List).
 * `<img src="bild.jpg" alt="Beskrivning">`: Visar en bild. `alt`-texten är obligatorisk för tillgänglighet.
+* `<div>`: Generisk block-container utan egen semantisk betydelse. Används för att gruppera och styla element.
+* `<span>`: Generisk inline-container. Används för att styla delar av text inne i ett stycke.
 
-### Semantiska Taggar (Ge sidan mening)
+### Semantiska taggar 
 Använd dessa istället för `<div>` för att berätta för webbläsaren vad innehållet faktiskt är:
 | Tagg | Beskrivning |
 | :--- | :--- |
@@ -103,6 +105,13 @@ Tabeller kan också innehålla `<thead>`, `<tbody>` och `<tfoot>` för att struk
 
 **Textstorlek:** `font-size: 16px;` (px), `1.5em` (1.5 gånger förälderns storlek) eller `120%` (120% av förälderns storlek).
 
+**Textegenskaper:**
+| Egenskap | Exempel | Beskrivning |
+| :--- | :--- | :--- |
+| `text-align` | `text-align: center;` | Justering: `left`, `center`, `right`. |
+| `text-decoration` | `text-decoration: underline;` | Understrykning. `none` tar bort understrykning från länkar. |
+| `text-transform` | `text-transform: uppercase;` | Skiftläge: `uppercase`, `lowercase`, `capitalize`. |
+
 **Google Fonts:**
 1. Hämta länk på [fonts.google.com](https://fonts.google.com).
 2. Klistra in `@import url('https://fonts.googleapis.com/css2?...');` i CSS-filen.
@@ -150,6 +159,19 @@ background: linear-gradient(to right, red, orange);
 ```
 *Verktyg:* [cssgradient.io](https://cssgradient.io) för att generera snygga övergångar.
 
+### Dekorativa effekter
+**Rundade hörn**
+```css
+border-radius: 8px;   /* Alla hörn */
+border-radius: 50%;   /* Cirkel (på kvadratiska element) */
+```
+
+**Skuggor**
+```css
+box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);  /* Skugga på element */
+text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); /* Skugga på text */
+```
+
 ### Box-modellen
 Box-modellen består av: 
 
@@ -158,6 +180,22 @@ Box-modellen består av:
 **Border** (kant) och **Margin** (ytteravstånd). 
 
 ![Box model](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/boxmodel.png)
+
+**Storlek:**
+| Egenskap | Beskrivning |
+| :--- | :--- |
+| `width` / `height` | Sätter elementets bredd och höjd. |
+| `max-width` | Elementet växer inte bredare än detta värde. Bra för läsbarhet på stora skärmar. |
+| `min-height` | Elementet är aldrig kortare än detta värde. |
+
+**box-sizing**
+
+Som standard räknas `width` och `height` bara på *innehållet* — padding och border läggs till utanpå, vilket gör det svårt att förutsäga den faktiska storleken. Med `box-sizing: border-box` ingår padding och border i det angivna måttet istället.
+```css
+* {
+  box-sizing: border-box; /* Rekommenderas globalt */
+}
+```
 
 Värden kan anges individuellt eller i shorthand-form.
 
