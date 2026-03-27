@@ -175,9 +175,10 @@ text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); /* Skugga på text */
 ### Box-modellen
 Box-modellen består av: 
 
-**Content** (innehåll), 
-**Padding** (inneravstånd), 
-**Border** (kant) och **Margin** (ytteravstånd). 
+* **Content** (innehåll), 
+* **Padding** (inneravstånd), 
+* **Border** (kant) och 
+* **Margin** (ytteravstånd till närliggande element). 
 
 ![Box model](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/boxmodel.png)
 
@@ -190,7 +191,7 @@ Box-modellen består av:
 
 **box-sizing**
 
-Som standard räknas `width` och `height` bara på *innehållet* — padding och border läggs till utanpå, vilket gör det svårt att förutsäga den faktiska storleken. Med `box-sizing: border-box` ingår padding och border i det angivna måttet istället.
+Som standard räknas `width` och `height` bara på *content* — padding och border läggs till utanpå, vilket gör det svårt att förutsäga den faktiska storleken. Med `box-sizing: border-box` ingår padding och border i det angivna måttet istället.
 ```css
 * {
   box-sizing: border-box; /* Rekommenderas globalt */
