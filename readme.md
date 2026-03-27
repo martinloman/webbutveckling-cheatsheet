@@ -50,6 +50,18 @@ En klassisk uppbyggnad för en navigationsmeny:
 | **Checkbox** | `<input type="checkbox">` | Kryssruta för att välja flera alternativ. |
 | **Knapp** | `<button type="submit">` | Skickar iväg formulärets data. |
 
+Alla dessa input-taggar kan också ha attribut som `name`, `id`, `placeholder` och `required` för att förbättra funktionaliteten och användarupplevelsen.
+
+Alla inputs ska ligga i ett `<form>`-element:
+```html
+<form action="/submit" method="post">
+  <input type="text" name="namn" placeholder="Ditt namn" required>
+  <input type="email" name="email" placeholder="Din e-post" required>
+  <button type="submit">Skicka</button>
+</form>
+```
+
+
 ### Ikoner (FontAwesome)
 1. Klistra in din Kit-länk (från FontAwesome) i HTML-dokumentets `<head>`.
 2. Använd taggen: `<i class="fa-solid fa-house"></i>`.
