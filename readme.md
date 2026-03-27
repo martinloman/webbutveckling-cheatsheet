@@ -3,6 +3,32 @@
 
 Detta dokument täcker grunderna i HTML5 och CSS3 för dig som bygger din första webbplats.
 
+Innehållsförteckning:
+- [HTML5 – struktur & innehåll](#html5--struktur--innehåll)
+  - [Grundläggande taggar](#grundläggande-taggar)
+  - [Semantiska taggar](#semantiska-taggar)
+  - [Exempel: Menystruktur](#exempel-menystruktur)
+  - [Formulär & Inputs](#formulär--inputs)
+  - [Tabeller](#tabeller)
+  - [Ikoner (FontAwesome)](#ikoner-fontawesome)
+- [CSS – Design & Stil](#css--design--stil)
+  - [Selektorer](#selektorer)
+  - [Färger & Fonter](#färger--fonter)
+  - [Tabeller](#tabeller-1) 
+  - [Listor](#listor)
+  - [Bakgrund & Gradients](#bakgrund--gradients)  
+  - [Dekorativa effekter](#dekorativa-effekter)
+  - [Box-modellen](#box-modellen) 
+  - [Display & Position](#display--position)
+- [Layout & Interaktivitet](#layout--interaktivitet)
+  - [Flexbox](#flexbox)   
+  - [Media Queries (Responsivitet)](#media-queries-responsivitet)
+  - [Pseudo-klasser](#pseudo-klasser)
+  - [Animationer](#animationer)
+- [Kodstruktur](#kodstruktur)
+  - [Shorthand-notation (Kompaktare CSS)](#shorthand-notation-kompaktare-css)
+- [Grundläggande sidstruktur](#grundläggande-sidstruktur)
+
 
 
 ## HTML5 – struktur & innehåll
@@ -349,3 +375,31 @@ border: 2px solid red;
 /* Tjocklek, stil och färg i en rad * /
 ```
 
+## Grundläggande sidstruktur
+Här är en enkel mall för en HTML-sida som inkluderar en header med navigationsmeny, ett main-innehåll och en footer. Den länkar också till en extern CSS-fil för styling.
+```html
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Min Första Webbplats</title>
+  <link rel="stylesheet" href="styles.css"> </head>
+<body>
+<header>
+  <nav class="menu">
+    <ul>
+      <li><a href="index.html" class="menu-item">Hem</a></li>
+      <li><a href="portfolio.html" class="menu-item">Portfolio</a></li>
+      <li><a href="kontakt.html" class="menu-item">Kontakt</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+<h1>Välkommen till min webbplats!</h1>
+<p>Detta är en enkel sida byggd med HTML och CSS.</p>
+</main>
+<footer>
+  <p>&copy; 2023 Min Webbplats. Alla rättigheter förbehållna.</p>
+</footer>
+</body>
