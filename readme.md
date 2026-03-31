@@ -403,3 +403,265 @@ Här är en enkel mall för en HTML-sida som inkluderar en header med navigation
   <p>&copy; 2023 Min Webbplats. Alla rättigheter förbehållna.</p>
 </footer>
 </body>
+</html>
+```
+
+# Javascript
+För att lägga till interaktivitet på din webbplats kan du använda JavaScript. Här är ett enkelt exempel som visar hur man kan ändra texten i ett element när en knapp klickas:
+
+HTML
+```html
+
+  <p id="text">Detta är en enkel sida med JavaScript-interaktivitet.</p>
+  <button onclick="changeText()">Klicka mig!</button>
+
+```
+JavaScript
+```javascript
+function changeText() {
+  document.getElementById("text").innerHTML = "Texten har ändrats!";
+}
+```
+
+### Visa/dölj element med JavaScript
+Man kan visa/dölja element genom att ändra deras `display`-egenskap. Här är ett exempel.
+
+HTML
+```html
+  <div id="element" style="display: none;">
+    Detta element är dolt tills du klickar på knappen.
+  </div>
+  <button onclick="toggleElement()">Visa/Dölj Element</button>
+```
+JavaScript
+```javascript
+function toggleElement() {
+  const element = document.getElementById("element");
+  if (element.style.display === "none") {
+    element.style.display = "block";
+  } else {
+    element.style.display = "none";
+  }
+}
+```
+
+### Ändra CSS-stil med JavaScript
+Du kan också ändra CSS-stil direkt från JavaScript. Här är ett exempel som änd  rar bakgrundsfärgen på en div när en knapp klickas:
+
+```html
+  <div id="colorBox" style="width: 100px; height: 100px; background-color: red;"></div>
+  <button onclick="changeColor()">Ändra Färg</button>
+```
+
+```javascript
+function changeColor() {
+  document.getElementById("colorBox").style.backgroundColor = "blue";
+}
+```
+
+### Lägg till element med JavaScript
+Du kan skapa och lägga till nya element i DOM:en (Document Object Model) med JavaScript. Här är ett exempel som lägger till en ny paragraf när en knapp klickas:
+
+```html
+  <div id="container"></div>
+  <button onclick="addParagraph()">Lägg till Paragraf</button>
+```
+
+```javascript
+function addParagraph() {
+  const container = document.getElementById("container");
+  const newParagraph = document.createElement("p");
+  newParagraph.textContent = "Detta är en ny paragraf.";
+  // Lägg till den nya paragrafen i containern
+  container.appendChild(newParagraph);
+}
+```
+
+### Event Listeners
+Istället för att använda `onclick`-attributet i HTML kan du lägga till event listeners i JavaScript för att hålla din HTML renare. Här är ett exempel:
+
+```html
+  <button id="myButton">Klicka mig!</button>
+```
+
+```javascript
+const myButton = document.getElementById("myButton");
+myButton.addEventListener("click", function() {
+  alert("Knappen klickades!");
+});
+```
+
+#### Vanliga event-typer
+| Event-typ | Beskrivning |
+| :--- | :--- |
+| `click` | När ett element klickas. |
+| `mouseover` | När pekaren flyttas över ett element. |
+| `mouseout` | När pekaren flyttas bort från ett element. |
+| `keydown` | När en tangent på tangentbordet trycks ned. |
+| `keyup` | När en tangent på tangentbordet släpps. |
+
+
+
+### DOM-manipulation
+DOM (Document Object Model) är en programmeringsgränssnitt som representerar HTML-dokumentet som en trädstruktur av noder. Med JavaScript kan du manipulera DOM för att ändra innehåll, struktur och stil på din webbplats dynamiskt. Här är några vanliga metoder för DOM-manipulation:  
+| Metod | Beskrivning | Exempel |
+| :--- | :--- | :--- |
+| `document.getElementById(id)` | Hämtar ett element med det angivna ID:t. | `document.getElementById("menu")` |
+| `document.querySelector(selector)` | Hämtar det första elementet som matchar CSS-selektorn. | `document.querySelector(".menu-item")` |
+| `document.querySelectorAll(selector)` | Hämtar alla element som matchar CSS-selektorn. | `document.querySelectorAll("li")` |
+| `element.textContent` | Ändrar eller hämtar textinnehållet i ett element. | `title.textContent = "Ny rubrik"` |
+| `element.innerHTML` | Ändrar eller hämtar HTML-innehållet i ett element. | `box.innerHTML = "<strong>Hej</strong>"` |
+| `element.style.property` | Ändrar en specifik CSS-egenskap för ett element. | `box.style.backgroundColor = "blue"` |
+| `element.classList.add(className)` | Lägger till en CSS-klass på ett element. | `menu.classList.add("open")` |
+| `element.classList.remove(className)` | Tar bort en CSS-klass från ett element. | `menu.classList.remove("open")` |
+| `element.classList.toggle(className)` | Växlar en CSS-klass på ett element (lägger till om den inte finns, tar bort om den finns). | `menu.classList.toggle("open")` |
+| `element.appendChild(newElement)` | Lägger till ett nytt element som barn till det angivna elementet. | `list.appendChild(newItem)` |
+| `element.removeChild(childElement)` | Tar bort ett barn-element från det angivna elementet. | `list.removeChild(oldItem)` |
+| `element.insertAdjacentHTML(position, html)` | Infogar HTML-kod på en specifik position i förhållande till elementet. `position` kan vara "beforebegin", "afterbegin", "beforeend", eller "afterend". | `card.insertAdjacentHTML("beforeend", "<p>Ny text</p>")` |
+
+
+### Enkel hamburgarmeny (HTML + CSS + JavaScript)
+Ett vanligt användningsområde för JavaScript är att skapa en interaktiv hamburgarmeny för mobilanpassade webbplatser.
+Här är ett mycket enkelt exempel där menyn visas/döljs när man klickar på hamburgarikonen (`fa-bars`).
+
+HTML
+```html
+<!-- Lägg i <head> för att kunna använda Font Awesome-ikoner -->
+<script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
+
+<button id="menuToggle" class="menu-toggle" aria-label="Öppna meny">
+  <i class="fa-solid fa-bars"></i>
+</button>
+
+<ul id="mobileMenu" class="mobile-menu">
+  <li><a href="#">Hem</a></li>
+  <li><a href="#">Om</a></li>
+  <li><a href="#">Kontakt</a></li>
+</ul>
+```
+CSS
+```css
+.menu-toggle {
+  font-size: 24px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: none; /* Dölj menyn som standard */
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+}
+/* När "show" klassen läggs till, visas menyn */
+.mobile-menu.show {
+  display: block;
+}
+```
+Javascript
+```javascript
+const menuToggle = document.getElementById("menuToggle");
+const mobileMenu = document.getElementById("mobileMenu");
+
+menuToggle.addEventListener("click", function() {
+  mobileMenu.classList.toggle("show");
+});
+```
+
+### Anropa ett API
+För att hämta data från ett API (Application Programming Interface) kan du använda `fetch`-funktionen i JavaScript. Här är ett enkelt exempel som hämtar data från ett API och visar det på sidan:
+
+HTML
+```html
+<div id="dataContainer"></div>
+<button onclick="hamtaData()">Hämta Data</button>
+```
+
+JavaScript
+```javascript
+async function hamtaData() {
+  try {
+    const response = await fetch('https://api.example.com/data');
+    const data = await response.json(); // Konvertera svaret till JSON
+
+    // Gör något med datan, t.ex. visa den på sidan
+    const container = document.getElementById('dataContainer');
+    container.textContent = JSON.stringify(data);
+  } catch (error) {
+    console.error('Fel vid hämtning av data:', error);
+  }
+}
+```
+
+Koden ovan använder `async/await` för att hantera asynkrona operationer på ett mer läsbart sätt. När knappen klickas, anropas `hamtaData`-funktionen som gör en `fetch`-förfrågan till det angivna API:et, konverterar svaret till JSON och visar det i `dataContainer`-diven. Om det uppstår ett fel under hämtningen loggas det i konsolen.
+
+#### JSON
+JSON (JavaScript Object Notation) är ett lättviktigt format för att utbyta data. Det är lätt att läsa och skriva för både människor och maskiner. JSON används ofta i API:er för att skicka data mellan klient och server.
+
+Ett objekt i JSON-format:
+```json
+{
+  "name": "Alice",
+  "age": 30,
+  "city": "Stockholm"
+}
+```
+
+En array i JSON-format:
+```json
+[
+  {
+    "name": "Alice",
+    "age": 30,
+    "city": "Stockholm"
+  },
+  {
+    "name": "Bob",
+    "age": 25,
+    "city": "Göteborg"
+  }
+]
+```
+
+JSON kan ha objekt i objekt, arrayer i objekt, och så vidare, vilket gör det mycket flexibelt för att representera komplexa data.
+
+Exempel:
+```json
+{
+  "users": [
+    {
+      "name": "Alice",
+      "age": 30,
+      "city": "Stockholm"
+    },
+    {
+      "name": "Bob",
+      "age": 25,
+      "city": "Göteborg"
+    }
+  ],
+  "count": 2
+}
+```
+
+För att hämta information från ett JSON-objekt i JavaScript, kan du använda punktnotation eller hakparenteser:
+```javascript
+const data = {
+  "users": [
+    {
+      "name": "Alice",
+      "age": 30,
+      "city": "Stockholm"
+    },
+    {
+      "name": "Bob",
+      "age": 25,
+      "city": "Göteborg"
+    }
+  ],
+  "count": 2
+};
+console.log(data.users[0].name); // Output: Alice
+console.log(data["users"][1]["city"]); // Output: Göteborg
+```
