@@ -25,9 +25,20 @@ Innehållsförteckning:
   - [Media Queries (Responsivitet)](#media-queries-responsivitet)
   - [Pseudo-klasser](#pseudo-klasser)
   - [Animationer](#animationer)
+    - [Loopande animationer](#loopande-animationer)
 - [Kodstruktur](#kodstruktur)
   - [Shorthand-notation (Kompaktare CSS)](#shorthand-notation-kompaktare-css)
 - [Grundläggande sidstruktur](#grundläggande-sidstruktur)
+- [Javascript](#javascript)
+  - [Visa/dölj element med JavaScript](#visadolj-element-med-javascript)
+  - [Ändra CSS-stil med JavaScript](#andra-css-stil-med-javascript)
+  - [Lägg till element med JavaScript](#lagg-till-element-med-javascript)
+  - [Event Listeners](#event-listeners)
+  
+  - [DOM-manipulation](#dom-manipulation)
+  - [Enkel hamburgarmeny (HTML + CSS + JavaScript)](#enkel-hamburgarmeny-html--css--javascript)
+  - [Anropa ett API](#anropa-ett-api)
+    - [JSON](#json)
 
 
 
