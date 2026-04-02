@@ -28,7 +28,7 @@ Innehållsförteckning:
     - [Loopande animationer](#loopande-animationer)
 - [Kodstruktur](#kodstruktur)
   - [Shorthand-notation (Kompaktare CSS)](#shorthand-notation-kompaktare-css)
-- [Grundläggande sidstruktur](#grundläggande-sidstruktur)
+- [Grundläggande sidstruktur i HTML](#grundläggande-sidstruktur)
 - [Javascript](#javascript)
   - [Visa/dölj element med JavaScript](#visadolj-element-med-javascript)
   - [Ändra CSS-stil med JavaScript](#andra-css-stil-med-javascript)
@@ -386,7 +386,7 @@ border: 2px solid red;
 /* Tjocklek, stil och färg i en rad * /
 ```
 
-## Grundläggande sidstruktur
+## Grundläggande sidstruktur i HTML
 Här är en enkel mall för en HTML-sida som inkluderar en header med navigationsmeny, ett main-innehåll och en footer. Den länkar också till en extern CSS-fil för styling.
 ```html
 <!DOCTYPE html>
